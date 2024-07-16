@@ -1,3 +1,5 @@
+// This is a test comment lol
+
 export function taskFirst() {
     const task = 'I prefer const when I can.';
     return task;
@@ -13,4 +15,3 @@ export function taskFirst() {
   
     return combination;
   }
-  
