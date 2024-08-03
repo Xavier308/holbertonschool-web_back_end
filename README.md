@@ -6,7 +6,7 @@ This repository contains examples and explanations of various ES6 (ECMAScript 20
 
 * **Xavier J. Cruz** - *Project implementation*
 
-## Repository Structure
+## Repository topics
 
 1. **ES6 Basics**
    - Introduction to ES6
@@ -38,6 +38,3 @@ This repository contains examples and explanations of various ES6 (ECMAScript 20
    - Async/await syntax
    - Creating async functions
 
-Each directory contains code examples and explanations to help you understand and implement these modern JavaScript features.
-
-<!-- Implemented by Xavier J. Cruz -->
