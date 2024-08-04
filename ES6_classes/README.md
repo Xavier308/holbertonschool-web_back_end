@@ -47,6 +47,3 @@ By the end of this project, you should be able to explain without external help:
 
 Don't forget to run `npm install` to install all necessary project dependencies.
 
-## Testing
-
-To run tests:
