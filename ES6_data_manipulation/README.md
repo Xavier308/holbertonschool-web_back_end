@@ -8,7 +8,9 @@ This project focuses on advanced data manipulation techniques in ES6 JavaScript.
 
 Johann Kerbrat, Engineering Manager at Uber Works
 
-<!-- Implemented by Xavier J. Cruz -->
+## Implementation
+
+* **Xavier J. Cruz** - *Project implementation*
 
 ## Learning Objectives
 
