@@ -38,3 +38,5 @@ This repository contains examples and explanations of various ES6 (ECMAScript 20
    - Async/await syntax
    - Creating async functions
 
+5. **Python variable annotations**
+
