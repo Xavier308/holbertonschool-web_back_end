@@ -13,7 +13,8 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
 
     Args:
         k (str): The string to be included in the tuple.
-        v (Union[int, float]): The number to be squared and included in the tuple.
+        v (Union[int, float]): The number to be squared
+        and included in the tuple.
 
     Returns:
         Tuple[str, float]: A tuple where the first
