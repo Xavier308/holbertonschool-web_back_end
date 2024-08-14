@@ -1,14 +1,30 @@
 #!/usr/bin/env python3
+"""
+This module provides functionality to run multiple instances of the
+`wait_random` function concurrently, collecting and returning their
+results. The `wait_n` coroutine creates multiple tasks and waits for
+all to complete, returning the list of delays.
+"""
 
 import asyncio
 import importlib
 
-# Dynamically import the wait_random function
+# Dynamically import the wait_random function from another module
 wait_random_module = importlib.import_module('0-basic_async_syntax')
 wait_random = wait_random_module.wait_random
 
 
-async def wait_n(n, max_delay):
+async def wait_n(n: int, max_delay: int) -> list:
+    """
+    Run `wait_random` concurrently for `n` times with `max_delay`.
+
+    Args:
+    n (int): The number of concurrent instances to run.
+    max_delay (int): The maximum delay passed to `wait_random`.
+
+    Returns:
+    list: A list of floats representing the delays from each completed task.
+    """
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
     completed_delays = await asyncio.gather(*tasks)
     return completed_delays
