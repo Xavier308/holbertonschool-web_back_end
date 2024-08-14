@@ -7,15 +7,19 @@ all to complete, returning the list of delays.
 """
 
 import asyncio
-import importlib
+from typing import List, Any
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list:
-    """
-    Run `wait_random` concurrently for `n` times with `max_delay`.
-    """
-    tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
-    completed_delays = await asyncio.gather(*tasks)
-    return completed_delays
+async def wait_n(n: int, max_delay: int) -> List[float]:
+    """ Function takes in 2 int arguments """
+    allDelays: List[float] = []
+    List_of_tasks: List[Any] = []
+    for i in range(n):
+        List_of_tasks.append(asyncio.create_task(wait_random(max_delay)))
+    for results in asyncio.as_completed(List_of_tasks):
+        completed = await results
+        allDelays.append(completed)
+    """ return the list of all the delays (float values) """
+    return allDelays
