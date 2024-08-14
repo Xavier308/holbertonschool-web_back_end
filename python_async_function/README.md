@@ -42,5 +42,3 @@ Write a function `task_wait_random` that takes an integer `max_delay` and return
 ### 4. Tasks
 Alter the code from `wait_n` into a new function `task_wait_n` using `task_wait_random`.
 
-## Author
-Emmanuel Turlay, Staff Software Engineer at Cruise
