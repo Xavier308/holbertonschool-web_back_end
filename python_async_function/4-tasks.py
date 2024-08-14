@@ -1,33 +1,26 @@
 #!/usr/bin/env python3
 """
-This module leverages the `task_wait_random` function from the `3-tasks` module
-to execute multiple asyncio tasks concurrently. It defines a coroutine,
-`task_wait_n`, that schedules multiple delay tasks and gathers their results.
+This module take the code from wait_n and alter it into a new function task_wait_n. 
 """
 
 import asyncio
-import importlib
+from typing import List, Any
 
-# Dynamically import the task_wait_random function from the 3-tasks module
-tasks_module = importlib.import_module('3-tasks')
-task_wait_random = tasks_module.task_wait_random
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int) -> list:
-    """
-    Execute multiple instances of `task_wait_random` concurrently.
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
+    """ Identical to task 1 but task_wait_random is being called """
+    allDelays: List = []
 
-    This coroutine creates `n` asyncio tasks using `task_wait_random` and waits
-    for all of them to complete, gathering and returning the list of resulting
-    delays.
+    for i in range(n):
+        allDelays.append(task_wait_random(max_delay))
 
-    Args:
-    n (int): Number of tasks to execute concurrently.
-    max_delay (int): Maximum delay for each `wait_random` task.
+    List_of_tasks: List[Any] = []
 
-    Returns:
-    list: A list of floats representing the delays from each completed task.
-    """
-    tasks = [task_wait_random(max_delay) for _ in range(n)]
-    completed_delays = await asyncio.gather(*tasks)
-    return completed_delays
+    for results in asyncio.as_completed(allDelays):
+        """ wait for as_completed to return """
+        completed: float = await results
+        List_of_tasks.append(completed)
+
+    return List_of_tasks
