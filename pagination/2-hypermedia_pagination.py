@@ -7,11 +7,13 @@ import csv
 import math
 from typing import List, Dict
 
+
 def index_range(page: int, page_size: int) -> tuple:
     """ Calculate the start and end index for pagination. """
     start_index = (page - 1) * page_size
     end_index = page * page_size
     return (start_index, end_index)
+
 
 class Server:
     """Server class to paginate a database of popular baby names."""
