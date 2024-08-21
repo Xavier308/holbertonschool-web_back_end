@@ -1,0 +1,2 @@
+// Switch to or create 'my_db' database in MongoDB
+use my_db
