@@ -1,4 +1,2 @@
-#!/bin/bash
-# Script to list all databases in MongoDB
-
+// Script to list all databases in MongoDB
 show dbs
