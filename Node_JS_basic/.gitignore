@@ -1,4 +1,4 @@
-Node_JS_basic/
+node_modules/
 package-lock.json
 package.json
 babel.config.js
